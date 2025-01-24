@@ -10,3 +10,9 @@ jobs: #importante seguir la identación pues indica que es un paso
             - name: mostrar texto
               run: echo "Hola Mundo"
                 
+    build:
+        runs-on: windows-latest
+        needs: [inicio]
+        steps:
+            - name: mostrar texto
+              run: echo "Construir"
