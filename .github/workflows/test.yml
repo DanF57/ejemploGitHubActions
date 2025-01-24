@@ -7,6 +7,6 @@ jobs: #importante seguir la identación pues indica que es un paso
         runs-on: windows-latest
         #Pasos:
         steps:
-        - name: mostrar texto
-         run: echo "Hola Mundo"
+            - name: mostrar texto
+              run: echo "Hola Mundo"
                 
