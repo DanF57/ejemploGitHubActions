@@ -8,25 +8,33 @@ jobs: #importante seguir la identación pues indica que es un paso
         #Pasos:
         steps:
             - name: mostrar texto
-              run: echo "Hola Mundo"
+              run: echo "Paso para clonar repositorio a github actions"
+            - name: Clonar Repositorio
+              uses: actions/checkout@v4.2.2
                 
     build:
         runs-on: windows-latest
         needs: [inicio]
         steps:
-            - name: mostrar texto
+            - name: texto
               run: echo "Construir"
+            - name: instalar PHP y composer Windows
+              run: |
+                choco install php --version=8.1
+                choco install composer
+                php -v
+                composer --version
 
     test:
         runs-on: windows-latest
         needs: [build]
         steps:
-            - name: mostrar texto
+            - name: texto
               run: echo "Test"
 
     deploy:
         runs-on: windows-latest
         needs: [test]
         steps:
-            - name: mostrar texto
+            - name: texto
               run: echo "Deploy"
