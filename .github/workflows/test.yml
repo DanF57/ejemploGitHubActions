@@ -24,6 +24,9 @@ jobs: #importante seguir la identación pues indica que es un paso
                 choco install composer
                 php -v
                 composer --version
+            - name: Instalar MySQL
+              run: |
+                choco install mysql --version=8.0
 
     test:
         runs-on: windows-latest
